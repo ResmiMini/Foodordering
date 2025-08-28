@@ -3,6 +3,7 @@ export default function Admin()
 {
     return( 
         <>
+        
          <div className="flex flex-col justify-center items-center gap-5 bg-gray-100">
             <img 
       src="https://www.swiggy.com/corporate/wp-content/uploads/2024/10/Sandwich-1-1194x1536.webp" 

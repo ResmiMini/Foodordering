@@ -32,14 +32,14 @@ export default function App() {
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="https://cdn.shopify.com/s/files/1/0148/5482/files/Bakrid_food_1_1024x1024.png?v=1718600050"
+            src="https://wallpaperswide.com/download/good_food-wallpaper-1024x576.jpg"
             alt="puffs"
             className="w-full h-64 object-cover rounded-2xl"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="https://wp2.velivery.com/wp-content/uploads/2023/03/KW10_VE_Storytelling_VoodFeed_FakeVegan_Header_Blogseite_Mobil-1024x1024.jpg"
+            src="https://www.lechoux.com/cdn/shop/files/LeChoux_MelisaCoppola_2025_April_29_1_df3f0d8c-3d55-4ab0-a6bb-71205186b987.png?v=1745686536&width=1500"
             alt="cutlet"
             className="w-full h-64 object-cover rounded-2xl"
           />

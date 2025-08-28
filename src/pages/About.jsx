@@ -13,14 +13,14 @@ export default function About() {
   <div>
     <img 
       src="https://www.swiggy.com/corporate/wp-content/uploads/2024/10/Sandwich-1-1194x1536.webp" 
-      className="w-[6cm] h-[6cm]" 
-      alt="Sandwich"
+      className="w-[6cm] h-[6cm] animate-pulse" 
+      alt="Sandwich" 
     />
   </div>
   <div>
     <img 
       src="https://www.swiggy.com/corporate/wp-content/uploads/2024/10/yoga-day-2-1024x944.webp" 
-      className="w-[6cm] h-[6cm]" 
+      className="w-[6cm] h-[6cm] animate-bounce" 
       alt="Yoga"
     />
   </div>

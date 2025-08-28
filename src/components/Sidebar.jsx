@@ -9,28 +9,22 @@ export default function Navbar({ cartCount }) {
     <nav className="bg-yellow-600 p-8 text-white flex items-center justify-between text-xl">
       <div className="flex-1"></div>
 
-      <h1 className="flex-1 text-center font-extrabold text-4xl">
-        🍟 Hunger 🍔 Station 🍩
-      </h1>
-
+      
       <div className="flex-1 flex gap-6 justify-end">
         <NavLink to="/" className={linkClasses}>
-          Home
+          ADD MENU
         </NavLink>
         <NavLink to="/about" className={linkClasses}>
-          About
+          FEEDBACKS
         </NavLink>
         <NavLink to="/login" className={linkClasses}>
-          Login
+          STATISTICS
         </NavLink>
         <NavLink to="/admin" className={linkClasses}>
-          Admin
+          USER MANAGEMENT
         </NavLink>
 
-        {/* Cart link with item count */}
-        <NavLink to="/cart" className={linkClasses}>
-          🛒  ({cartCount})
-        </NavLink>
+        
       </div>
     </nav>
   );
