@@ -1,5 +1,14 @@
 # React + Vite
 
+# 🍔 Food Ordering App  
+
+A simple food ordering app built with React + Vite + TailwindCSS.  
+
+👉 **Live Demo:** [Click here to view](https://resmimini.github.io/Foodordering/)  
+
+
+
+
 a Food Ordering System built with React.
 The idea behind this project is to simplify the way customers order food online. Instead of going through traditional methods, users can browse, search, and order their favorite dishes with just a few clicks.
 
