@@ -1,5 +1,7 @@
 
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
 
 
 export default function Register() {
@@ -122,7 +124,9 @@ export default function Register() {
             Register 
           </button>
         </form>
-        {message && <p className="mt-4 text-center">{message}</p>}
+        {message && <p className="mt-4 text-center">{message}<Link to="/login" className="text-blue-600 hover:underline">
+              Login here
+            </Link></p>}
       </div>
        <img
   src="https://b.zmtcdn.com/data/o2_assets/110a09a9d81f0e5305041c1b507d0f391743058910.png"

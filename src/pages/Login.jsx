@@ -1,13 +1,14 @@
-
-import { Link } from "react-router-dom";
-  import { useState } from "react";
-  import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState, useContext } from "react";
+import { UserContext } from "../context/UserContext"; // Make sure you have this
 
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
+
+  const { login } = useContext(UserContext); // 🔥 get login function from context
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -21,22 +22,23 @@ export default function Login() {
     );
 
     if (user) {
-      setMessage(`✅ Welcome, ${user.name}! Login successful.`);
-      setTimeout(() => {
-        navigate("/");
-      }, 1000);
-      // 👉 Here you can redirect to a Dashboard page using React Router
+      login(user); // ✅ update context + localStorage
+
+      if (user.username === "admin") {
+        navigate("/admin"); // Redirect admin
+      } else {
+        navigate("/"); // Redirect normal user
+      }
     } else {
-      setMessage("❌ Invalid username or password!");
+      setMessage("❌ Invalid username or password");
     }
   };
 
   return (
-    <>
     <div className="flex items-center justify-center h-[15cm] bg-gray-100">
       <div className="bg-white p-5 rounded-2xl shadow-md w-[550px]">
-        <h2 className="text-2xl font-bold mb-6 text-center">Login 🍰 </h2>
-        
+        <h2 className="text-2xl font-bold mb-6 text-center">Login 🍰</h2>
+
         <form onSubmit={handleLogin} className="space-y-4">
           <input
             type="text"
@@ -58,6 +60,7 @@ export default function Login() {
           >
             Login
           </button>
+
           <p>
             Don’t have an account?{" "}
             <Link to="/register" className="text-blue-600 hover:underline">
@@ -65,12 +68,11 @@ export default function Login() {
             </Link>
           </p>
 
-           <p>By clicking on Login, I accept the Terms & Conditions & Privacy Policy</p>
+          <p>By clicking on Login, I accept the Terms & Conditions & Privacy Policy</p>
         </form>
 
         {message && <p className="mt-4 text-center">{message}</p>}
       </div>
     </div>
-    </>
   );
 }

@@ -8,7 +8,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 export default function App() {
   return (
-    <div className="w-full mx-auto mt-10">
+    <div className="w-full mx-auto mt-10 h-[8cm]"> 
       <Swiper
         spaceBetween={30}
         centeredSlides={true}

@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -7,17 +7,21 @@ import Login from "./pages/Login";
 import Admin from "./pages/Admin";
 import Register from "./pages/Register";
 import Cart from "./pages/Cart";
+import Feedback from "./pages/Feedback";
+import User from "./pages/User";
+import Statistics from "./pages/Statistics";
+import ErrorPage from "./pages/ErrorPage";
 
 export default function App() {
   const [cart, setCart] = useState([]);
-  const decreaseQty = (id) => {
-  setCart((prevCart) =>
-    prevCart.map((item) =>
-      item.id === id
-        ? { ...item, qty: item.qty > 1 ? item.qty - 1 : 1 } // don’t go below 1
-        : item
-    )
-  );
+  const removeFromCart = (id) => {
+  setCart(cart.filter((item) => item.id !== id));
+};
+
+const decreaseQty = (id) => {
+  setCart(cart.map((item) =>
+    item.id === id && item.qty > 1 ? { ...item, qty: item.qty - 1 } : item
+  ));
 };
 
   // Add to cart function
@@ -37,17 +41,25 @@ export default function App() {
 
   return (
     <div>
+      
       <Navbar cartCount={cart.length} />
+      
       <Routes>
         <Route path="/" element={<Home addToCart={addToCart}  />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/feedback" element={<Feedback/>} />
+        <Route path="/statistics" element={<Statistics/>} />
+        <Route path="/usermgt" element={<User/>} />
+        <Route path="*" element={<ErrorPage />} />
+
 <Route
   path="/cart"
   element={<Cart cart={cart} addToCart={addToCart} decreaseQty={decreaseQty} />}
 />      </Routes>
+
     </div>
   );
 }
